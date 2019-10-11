@@ -91,7 +91,7 @@ class CharacterPicker extends Component {
                     </div>
 
                 {msg}
-                {this.state.num === 0 && <button onClick={this.randomNumber}>Get 'em with the big boys</button>}
+                {this.state.num === 0 && <button onClick={this.randomNumber}>和大男孩們在一起</button>}
                 {this.state.num !== 0 && <button onClick={this.randomNumber}>Next Character</button>}
 
             </div>
