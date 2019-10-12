@@ -9,6 +9,7 @@ import Ken from "./icons/Ken.jpg"
 import Pikachu from "./icons/Pikachu.jpg"
 import Ridley from "./icons/Ridley.jpg"
 import Greninja from "./icons/Greninja.jpg"
+import ROB from "./icons/ROB.jpg"
 
 class CharacterPicker extends Component {
 
@@ -19,8 +20,14 @@ class CharacterPicker extends Component {
     }
     
     randomNumber() {
-        let rand = Math.floor(Math.random() * 7 + 1);
+        let rand = Math.floor(Math.random() * 8 + 1);
         this.setState({num: rand})
+    }
+
+    updates() {
+        alert(
+            "10/12/19 ROB has been added"
+        )
     }
 
     render() {
@@ -80,6 +87,14 @@ class CharacterPicker extends Component {
                 <h3>Greninja</h3>
             </div>
         }
+
+            else if (this.state.num === 8) {
+            msg =
+            <div>
+                <img className="icon" alt="R.O.B." src={ROB} />
+                <h3>R.O.B.</h3>
+            </div>
+        }
         console.log(this.state.num)
 
         return (
@@ -93,6 +108,11 @@ class CharacterPicker extends Component {
                 {msg}
                 {this.state.num === 0 && <button onClick={this.randomNumber}>和大男孩們在一起</button>}
                 {this.state.num !== 0 && <button onClick={this.randomNumber}>Next Character</button>}
+                
+                <div className= "question-mark">
+                <button className="question-button" onClick={() => this.updates() }> <i className="fas fa-question-circle"></i> </button>
+                </div>
+                
 
             </div>
         )
